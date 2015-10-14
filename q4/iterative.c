@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <assert.h>
 #include <stdlib.h>
 
 int maxSubArray(int A[], int n)
@@ -24,6 +25,7 @@ int main()
         scanf("%d", &count);
         if (count == 0)
             break;
+        assert((count > 0) && "Error! The number of array should bigger than 0.");
         i = 0;
         A = (int *) malloc(count * sizeof(int));
         while (i < count) {
