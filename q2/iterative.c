@@ -1,11 +1,15 @@
 #include <stdio.h>
 #include <string.h>
 
+#define SIZE 30
+
 int main()
 {
-    char str[30];
+    char str[SIZE];
     char c;
-    gets(str);
+    if (!fgets(str, SIZE, stdin)) {
+        return 0;
+    }
     c = getchar();
     int size = strlen(str);
     if (!size)
