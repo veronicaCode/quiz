@@ -22,9 +22,20 @@ int main()
 {
     char str[30];
     char c;
+    int i = 0;
     fgets(str, 30, stdin);
     str[strlen(str)] = '\0';
+    for (i = 0; i < strlen(str) - 1; i++) {
+        if (str[i] < 'a' || str[i] > 'z') {
+            printf("The input string should be all lower case!\n");
+            return 0;
+        }
+    }
     c = getchar();
+    if (c < 'a' || c > 'z') {
+        printf("The input alphabat should be lower case.\n");
+        return 0;
+    }
     c = find_miniest_ch(&str[0], c, 0);
     putchar(c);
     return 0;
